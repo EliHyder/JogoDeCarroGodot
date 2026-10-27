@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://c2f7461x2ango"]
+
+[ext_resource type="Script" uid="uid://drybjycpmi8k7" path="res://Entities/Car/car.gd" id="1_756dp"]
+[ext_resource type="Texture2D" uid="uid://blv5vu5ryjp8t" path="res://Assets/Sprites/Dot.png" id="2_it1it"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pfxyh"]
+load_path = "res://.godot/imported/CarBlue.png-cac48332a20226a4b3bce245add1174c.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ql2qa"]
+size = Vector2(128, 163)
+
+[sub_resource type="Curve" id="Curve_ql2qa"]
+_data = [Vector2(0, 0.49557525), 0.0, 0.0, 0, 0, Vector2(0.4957627, 0.9823009), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Car" type="Area2D" unique_id=2126556166]
+scale = Vector2(0.4, 0.4)
+collision_mask = 2
+script = ExtResource("1_756dp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=362998634]
+rotation = 1.5707964
+texture = SubResource("CompressedTexture2D_pfxyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1766656107]
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_ql2qa")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1995447691]
+zoom = Vector2(2.5, 2.5)
+
+[node name="ClashEffect" type="CPUParticles2D" parent="." unique_id=2095410696]
+emitting = false
+amount = 32
+texture = ExtResource("2_it1it")
+one_shot = true
+explosiveness = 0.75
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 180.0
+initial_velocity_max = 200.0
+orbit_velocity_min = -2.0
+orbit_velocity_max = 2.0
+radial_accel_min = 80.0
+radial_accel_max = 100.0
+scale_amount_min = 0.01
+scale_amount_max = 0.03
+scale_amount_curve = SubResource("Curve_ql2qa")
