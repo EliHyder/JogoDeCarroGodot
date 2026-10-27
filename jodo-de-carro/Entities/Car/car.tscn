@@ -26,9 +26,6 @@ texture = SubResource("CompressedTexture2D_pfxyh")
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_ql2qa")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1995447691]
-zoom = Vector2(2.5, 2.5)
-
 [node name="ClashEffect" type="CPUParticles2D" parent="." unique_id=2095410696]
 emitting = false
 amount = 32

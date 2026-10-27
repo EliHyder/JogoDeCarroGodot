@@ -60,9 +60,6 @@ func bounce(dir_to_path:Vector2) -> void:
 	bounce_tween.tween_property(self, "rotation_degrees", rotation_degrees + 540, bounce_time)
 	bounce_tween.set_parallel(false)
 	bounce_tween.finished.connect(bounce_done)
-	#position += -transform.x  * bounce_force
-	#await get_tree().create_timer(bounce_time).timeout
-	#set_physics_process(true)
 	
 	
 func hit_boundary(dir_to_path:Vector2) -> void:

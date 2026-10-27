@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://kn8gcr8cphds" path="res://Entities/Track/track.gd" id="1_eyjsg"]
 [ext_resource type="Texture2D" uid="uid://c1m5vk3rejca7" path="res://Assets/Sprites/Monaco.png" id="2_eyjsg"]
 [ext_resource type="PackedScene" uid="uid://c2f7461x2ango" path="res://Entities/Car/car.tscn" id="3_f2ftl"]
+[ext_resource type="PackedScene" uid="uid://cmtolpvqw8h4n" path="res://Entities/OilDropper/oil_dropper.tscn" id="5_f2ftl"]
 
 [sub_resource type="Curve2D" id="Curve2D_eyjsg"]
 _data = {
@@ -43,5 +44,19 @@ polygon = PackedVector2Array(823, 277, 823, 277, 770, 195, 712, 110, 665, 69, 60
 
 [node name="TrackPath" type="Path2D" parent="." unique_id=646172605]
 curve = SubResource("Curve2D_eyjsg")
+
+[node name="OilDropper" parent="TrackPath" unique_id=1242741364 node_paths=PackedStringArray("oil_container") instance=ExtResource("5_f2ftl")]
+position = Vector2(809, 724)
+rotation = 0.20982829
+oil_container = NodePath("../../OilContainer")
+drop_time_var = Vector2(5, 8)
+
+[node name="OilDropper2" parent="TrackPath" unique_id=1759168844 node_paths=PackedStringArray("oil_container") instance=ExtResource("5_f2ftl")]
+position = Vector2(809, 724)
+rotation = 0.20982829
+oil_container = NodePath("../../OilContainer")
+drop_time_var = Vector2(5, 8)
+
+[node name="OilContainer" type="Node" parent="." unique_id=691201351]
 
 [connection signal="area_entered" from="TrackCollsion" to="." method="_on_track_collsion_area_entered"]

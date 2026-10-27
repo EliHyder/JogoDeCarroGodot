@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ckvarft7j3a8q"]
+
+[ext_resource type="Texture2D" uid="uid://yyr47gbb1gym" path="res://Assets/Sprites/Oil.png" id="1_fvx5c"]
+[ext_resource type="Script" uid="uid://cqcscpoi0py" path="res://Entities/Oil/oil.gd" id="1_jaj6m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ql2qa"]
+radius = 73.02739
+
+[node name="Oil" type="Area2D" unique_id=810581834]
+collision_layer = 0
+script = ExtResource("1_jaj6m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1145521423]
+texture = ExtResource("1_fvx5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=239852803]
+shape = SubResource("CircleShape2D_ql2qa")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
